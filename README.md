@@ -47,20 +47,19 @@ public class Main {
             array[array.length-1] = x;
             System.out.println("New array after swaping the first and last elements: "+Arrays.toString(array));
            //solve 6
-            ArrayList<String> list = new ArrayList<String>();
-            String [] dict = {"cat", "dog", "red", "is", "am"};
-            System.out.println("Original dictionary : "+ Arrays.toString(dict));
-            int longest_length = 0;
-            for (String str : dict) {
-                int length = str.length();
-                if (length > longest_length) {
-                    longest_length = length;
-                    list.clear();
-                }
-                if (length == longest_length) {
-                    list.add(str);
-                }
-                System.out.println(""+list);
+          String[] dictionary = {"catt", "dogg", "red", "is", "am"};
+        int maxLength = 0;
+        ArrayList<String> longest = new ArrayList<>();
+        for (String word : dictionary) {
+            if (word.length() > maxLength) {
+                maxLength = word.length();
+                longest.clear();
+                longest.add(word);
+            } else if (word.length() == maxLength) {
+                longest.add(word);
+            }
+        }
+        System.out.println("The longest words in the dictionary are: " + longest.toString());
             }
             //solve 7
             System.out.print("Enter the number of elements you want to store: ");
